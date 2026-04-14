@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anistyn Barber | Personal Resume</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      background: #f5f5f7;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    .navbar {
+      background: white;
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: #374151;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 4.5rem 0 5rem;
+      min-height: calc(100vh - 88px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #2563eb, #9333ea, #ec4899);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .eyebrow {
+      font-size: 1.35rem;
+      color: #6b7280;
+      margin-bottom: 0.75rem;
+      font-weight: 300;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      line-height: 0.98;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.25rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #2563eb 0%, #7c3aed 45%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .hero p {
+      max-width: 610px;
+      color: #6b7280;
+      font-size: 1.05rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      color: #4b5563;
+      font-weight: 500;
+    }
+
+    .contact-row a:hover {
+      color: #2563eb;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 1rem 1.7rem;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      color: white;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(124, 58, 237, 0.22);
+    }
+
+    .btn-outline {
+      border: 1.5px solid #1f2937;
+      color: #1f2937;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #111827;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .mini-highlights {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      padding: 0.65rem 1rem;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 999px;
+      color: #4b5563;
+      font-size: 0.92rem;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    /* PHOTO SIDE */
+    .visual-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .visual-card {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1 / 1.08;
+      border-radius: 42px;
+      background: linear-gradient(180deg, #2f43ff 0%, #6d28d9 52%, #ec4899 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(91, 33, 182, 0.18);
+    }
+
+    .visual-card img {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .dot-group {
+      position: absolute;
+      display: grid;
+      grid-template-columns: repeat(3, 10px);
+      gap: 10px;
+    }
+
+    .dot-group span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.95;
+    }
+
+    .dot-group.blue span {
+      background: #2f43ff;
+    }
+
+    .dots-top-right {
+      top: 72px;
+      right: 28px;
+    }
+
+    .dots-bottom-left {
+      bottom: 70px;
+      left: 24px;
+    }
+
+    .dots-mid-right {
+      top: 150px;
+      right: -28px;
+    }
+
+    /* SECTION PREVIEW */
+    .section-preview {
+      padding: 0 0 5rem;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      color: #111827;
+    }
+
+    .card p {
+      color: #6b7280;
+      font-size: 0.96rem;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 3rem;
+      }
+
+      .hero-left {
+        order: 2;
+        text-align: center;
+      }
+
+      .hero p,
+      .contact-row,
+      .button-row,
+      .mini-highlights {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero p {
+        max-width: 700px;
+      }
+
+      .visual-wrap {
+        order: 1;
+      }
+
+      .visual-card {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.9rem;
+      }
+
+      .eyebrow {
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .visual-card {
+        border-radius: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#">Anistyn Barber</a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="AIGame.html">Ai game</a>
+        <a href="Scratch.html">My Life</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="badge">BYU · Student Athlete · Cheer</div>
+        <div class="eyebrow">Hi, I’m Anistyn Barber</div>
+
+        <h1>
+          <span class="gradient-text">Driven, disciplined,</span><br>
+          <span class="gradient-text">and built for team success.</span>
+        </h1>
+
+        <p>
+          I’m a Brigham Young University student and Division I cheer athlete passionate about leadership,
+          performance, and representing my team with energy, professionalism, and heart.
+        </p>
+
+        <div class="contact-row" id="contact">
+          <a href="mailto:anistynb@byu.edu">anistynb@byu.edu</a>
+          <a href="https://instagram.com/anistyn.barber" target="_blank">@anistyn.barber</a>
+        </div>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="#experience">View Experience</a>
+          <a class="btn btn-outline" href="#about">About Me</a>
+        </div>
+
+        <div class="mini-highlights">
+          <div class="pill">BYU Student</div>
+          <div class="pill">Division I Cheer</div>
+          <div class="pill">Leadership</div>
+        </div>
+      </div>
+
+      <div class="visual-wrap">
+        <div class="visual-card">
+          <div class="dot-group dots-top-right">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+
+          <div class="dot-group blue dots-mid-right">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+
+          <div class="dot-group dots-bottom-left">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+
+          <img
+            src="https://byucougars.com/imgproxy/5smVtQPDVeFdSSrK6baaGlsv7XjFZnY0h3W_kd51EbM/rs:fit:2560:0:0:0/q:95/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2J5dWNvdWdhcnMtcHJvZC8yMDI1LzEwLzE2LzdaUjVLOEFvR2hIc0U3NHlRRGdFTk9wTEY0N1JYSXpoOTJjOElKOUkuanBn.jpg"
+            alt="Anistyn Barber"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-preview" id="about">
+    <div class="container preview-grid">
+      <div class="card">
+        <h3>Education</h3>
+        <p>
+          Brigham Young University student balancing academics with the demands of Division I athletics.
+        </p>
+      </div>
+
+      <div class="card" id="experience">
+        <h3>Cheer Career</h3>
+        <p>
+          Collegiate athlete experience built on trust, communication, consistency, and performing under pressure.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Strengths</h3>
+        <p>
+          Leadership, teamwork, discipline, time management, adaptability, and positive team culture.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Anistyn Barber
+  </footer>
+</body>
+</html>

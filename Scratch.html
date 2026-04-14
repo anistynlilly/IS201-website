@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BYU Cheer</title>
+  <link rel="icon" href="ellie.png" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fb;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    header {
+      background-color: #003da5;
+      color: white;
+      padding: 18px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.75;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      background:
+        linear-gradient(to right, rgba(0, 61, 165, 0.85), rgba(0, 61, 165, 0.35)),
+        url("https://byucougars.com/imgproxy/5smVtQPDVeFdSSrK6baaGlsv7XjFZnY0h3W_kd51EbM/rs:fit:2560:0:0:0/q:95/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2J5dWNvdWdhcnMtcHJvZC8yMDI1LzEwLzE2LzdaUjVLOEFvR2hIc0U3NHlRRGdFTk9wTEY0N1JYSXpoOTJjOElKOUkuanBn.jpg");
+      background-size: cover;
+      background-position: center 30%; /* FIXED: moves image down */
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 28px;
+      max-width: 520px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: white;
+      color: #003da5;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background-color: #e8eefc;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .profile img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .profile h2 {
+      color: #003da5;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .profile a {
+      text-decoration: none;
+      color: #003da5;
+    }
+
+    .profile a:hover {
+      text-decoration: underline;
+    }
+
+    .lists-section h3 {
+      color: #003da5;
+      margin-bottom: 12px;
+      margin-top: 18px;
+    }
+
+    .lists-section ol,
+    .lists-section ul {
+      margin-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    .lists-section li {
+      margin-bottom: 8px;
+    }
+
+    .fun-box {
+      text-align: center;
+      background: linear-gradient(135deg, #003da5, #0057d8);
+      color: white;
+    }
+
+    .fun-box h3 {
+      margin-bottom: 14px;
+      font-size: 1.8rem;
+    }
+
+    .fun-box p {
+      margin-bottom: 18px;
+    }
+
+    #cheerMessage {
+      margin-top: 16px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: #001b4d;
+      color: white;
+      text-align: center;
+      padding: 24px;
+      margin-top: 40px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+
+      .profile {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        margin-top: 12px;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .hero {
+        background-position: center 20%; /* better for mobile */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">BYU CHEER</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#athlete">Athlete</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#spirit">Spirit</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Join the Spirit of BYU Cheer</h1>
+      <p>
+        Strength, energy, and tradition — celebrating the athletes who power BYU game day.
+      </p>
+      <a class="btn" href="#athlete">Meet the Athlete</a>
+    </div>
+  </section>
+
+  <main>
+
+    <section class="card profile" id="athlete">
+      <img
+        src="https://byucougars.com/imgproxy/5smVtQPDVeFdSSrK6baaGlsv7XjFZnY0h3W_kd51EbM/rs:fit:2560:0:0:0/q:95/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2J5dWNvdWdhcnMtcHJvZC8yMDI1LzEwLzE2LzdaUjVLOEFvR2hIc0U3NHlRRGdFTk9wTEY0N1JYSXpoOTJjOElKOUkuanBn.jpg"
+        alt="Image of Anistyn Barber"
+      />
+
+      <div>
+        <a href="https://byucougars.com/sports/cheer-squad/roster/player/anistyn-barber" target="_blank">
+          <h2>Anistyn Barber</h2>
+        </a>
+        <p>
+          Anistyn Barber is a BYU cheerleader from Highland, Utah bringing energy,
+          strength, and school spirit to every performance.
+        </p>
+      </div>
+    </section>
+
+    <section class="card lists-section" id="lists">
+      <h2 style="color:#003da5;">About Anistyn</h2>
+
+      <h3>Ordered List: Siblings</h3>
+      <ol>
+        <li>Cambrie Barber</li>
+        <li>Vallen Barber</li>
+        <li>Jace Barber</li>
+      </ol>
+
+      <h3>Favorite Things</h3>
+      <ul>
+        <li>Competing</li>
+        <li>Tumbling</li>
+        <li>Baking Sweet Treats</li>
+        <li>Long Walks</li>
+      </ul>
+    </section>
+
+    <section class="card fun-box" id="spirit">
+      <h3>Show Some School Spirit</h3>
+      <p>Click below 👇</p>
+      <button class="btn" onclick="showCheer()">Go Cougars!</button>
+      <p id="cheerMessage"></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 BYU Cheer Fan Page</p>
+  </footer>
+
+  <script>
+    function showCheer() {
+      const messages = [
+        "Go Cougars!",
+        "Rise and shout!",
+        "BYU spirit is unmatched!",
+        "Blue and white forever!",
+        "Cheer loud, cheer proud!"
+      ];
+
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      document.getElementById("cheerMessage").textContent = messages[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
